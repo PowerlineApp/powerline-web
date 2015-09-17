@@ -1,0 +1,17 @@
+	
+<ul class="clear" ng-controller="userRepCtrl">
+	
+		<h4>My Representatives (<span class="number">{{followNumber}}</span>)</h4>
+		
+		
+		<li ng-repeat="x in userReps | limitTo: 4 | orderBy: random " >
+			<a href="">
+				<img ng-src="{{x.avatar_file_name}}">
+				<h4>{{x.title}}</h4>
+			</a>
+		</li>
+
+</ul>
+	
+
+

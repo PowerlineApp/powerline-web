@@ -1,0 +1,72 @@
+@border-radius-base: 0px;
+@btn-fb-bg: #3a5999;
+@btn-fb-border: rgba(0, 0, 0, 0);
+
+@import "../vendor/bootstrap/less/buttons.less";
+
+.btn-fb {
+  .button-variant(@btn-primary-color; @btn-fb-bg; @btn-fb-border);
+  position: relative;
+  padding-left: 55px;
+  padding-right: 30px;
+  margin-left: 8px;
+  .icon-fb {
+    position: absolute;
+    left: 15px;
+  }
+}
+
+.btn {
+  font-size: 15px;
+}
+
+
+.btn-block {
+  width: 100%;
+}
+
+article {
+
+}
+
+.btn-210 {
+  width: 210px;
+}
+
+.switch {
+  width: 100px;
+  height: 50px;
+  i {
+    display: block;
+    width: 50px;
+    height: 50px;
+    float: left;
+  }
+  &.switch-green i{
+    background-size: auto 80px;
+    background-position-y: 10px;
+    background-color: #7eae33;
+    background-image: url("../images/buttons/privacy-sprite.png");
+    background-repeat: no-repeat;
+    &.ng-click-active {background-color: #658b2a;}
+    &.active, &.active.ng-click-active {
+      background-color: #fff;
+      background-position-y: -39px;
+    }
+    &.face {background-position-x: 6px;}
+    &.face-anon {background-position-x: -63px;}
+  }
+
+}
+
+.switch-btn-group {
+  width: 100%;
+  .switch{
+    float: right;
+  }
+  .btn {
+    float: left;
+    display: block;
+    width: 65%;
+  }
+}

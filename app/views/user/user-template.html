@@ -1,0 +1,369 @@
+<header ng-include=" 'views/header-user.html' "></header>
+
+<section id="wrap" ng-controller="userCtrl">
+
+	
+	
+	<div id="header" class="clear">
+		
+			<button class="social-action-button" type="button">Follow +</button>
+		
+	</div> <!-- End Header Image -->
+	
+	<section class="main-content contain clear">
+	
+		<div class="column quarter profile-column">
+		
+			<img class="user-profile-image" src="../img/powerline_profile_img.jpg">
+		
+			<h2 id="user_name">{{userInfo.full_name}}</h2>
+		
+			<p>Powerline is the easiest way for leaders and communities to interact. Community engagement has never been more meaningful.</p>
+		
+			<div class="user_details" id="user_date">
+				<span class="icon-calendar"></span>Date Formed: 01/06/2015
+			</div>
+		
+			<div class="user_details" id="member_count">
+				<span class="icon-users"></span>Members: 99
+			</div>
+		
+			<div id="groups" class="detail-block">
+				
+				<h4>My Groups (<span class="number">24</span>)</h4>
+				
+				<select>
+					<option>Hoboken</option>
+					<option>New Jersey</option>
+					<option>U.S. Democratic Party</option>
+				</select>	
+			</div>
+	
+		<div id="influences" class="image-block">
+			
+			<h4>My Influences (<span class="number">24</span>)</h4>
+			
+			<ul class="clear">
+				<li><a href=""><img src="../img/profile_thumb.jpg"></a></li>
+				<li><a href=""><img src="../img/profile_thumb2.jpg"></a></li>
+				<li><a href=""><img src="../img/profile_thumb.jpg"></a></li>
+				<li><a href=""><img src="../img/profile_thumb2.jpg"></a></li>
+			</ul>
+				
+		</div>
+		
+		<div id="representatives" class="image-block">
+			
+			<h4>My Representatives (<span class="number">12</span>)</h4>
+			
+			<ul class="clear">
+				<li><a href=""><img src="../img/profile_thumb2.jpg"></a></li>
+				<li><a href=""><img src="../img/profile_thumb.jpg"></a></li>
+				<li><a href=""><img src="../img/profile_thumb2.jpg"></a></li>
+				<li><a href=""><img src="../img/profile_thumb.jpg"></a></li>
+			</ul>
+				
+		</div>	
+	
+	</div>		
+	
+	<!-- Begin User Activity Column -->
+	
+	<div id="" class="column half">
+			
+			<section id="post-mechanism" class="tabs">
+				
+				<ul class="tab-links clear tab_nav">
+					<li class="active" ><a class="tab_toggle tab1 " href><span class="icon-man"></span> New Post</a></li>
+					<li><a class="tab_toggle tab2 " href><span class="icon-man"></span> New Petition</a></li>
+				</ul>
+			
+				<div class="tab-content clear">
+				
+					<div id="tab1" class="tab active">
+				
+						<input type="text" placeholder="Title" />
+				
+						<textarea type="text" placeholder="" >Message</textarea>
+				
+						<span id="post-info-count">960 petitions left in this group</span>	
+					
+						<button class="social-action-button">Post</button>
+				
+					</div>
+			
+					<div id="tab2" style="display:none;">
+				
+						<textarea type="text"></textarea>
+				
+						<span id="post-info-count">960 petitions left in this group</span>	
+					
+						<button class="social-action-button post">Post</button>
+				
+					</div>	
+				
+				</div> <!-- End Tab Content -->
+				
+			</section>
+				
+			<section class="tab-contain clear"> <!-- Begin Activity Feed Content -->
+			
+					<select id="select-info" class="right">
+						<option>Hoboken</option>
+						<option>New Jersey</option>
+						<option>Other Groups</option>
+					</select>	
+			
+					<ul class="clear tab-links tab_nav">
+						<li class="active"><a class="tab_toggle tab1 active_tab" href="">Most Recent</a></li>
+						<li><a class="tab_toggle tab2" href="">Most Popular</a></li>
+					</ul>
+					
+				<section id="activity-feed">		
+			
+					<div class="tab-content">
+			
+						<ul class="clear">
+				
+							<li class="activity_post top_post clear" >
+								<div class="post-img">
+									<img src="../img/test_woman1.jpg" >
+								</div>
+						
+								<div class="post-text" ng-include=" 'views/user/post-actions.html' " >
+									
+								</div>
+								
+								<div class="reply-box">
+									<a class="post-img" >
+										<img src="../img/test_woman3.jpg" />
+									</a>
+									<textarea rows="4" class="reply_area">
+									</textarea>		
+								</div>
+							</li>
+							
+							<li class="activity_post reply_post clear"> 	
+								
+									<div>
+											<a class="comment post-img" href="">
+												<img src="../img/test_woman1.jpg">
+											</a>
+										
+											<div class="post-text" ng-include=" 'views/user/reply-actions.html' " >
+											</div> <!-- Post Text -->
+									</div>				
+							</li>
+				
+							<li class="activity_post reply_post clear">
+									
+									<div class="post-img">
+										<img src="../img/test_woman2.jpg" >
+										Officer
+									</div>
+					
+									<div class="post-text" ng-include=" 'views/user/reply-actions.html' ">
+								
+									</div>		
+									
+							</li>
+							
+						</ul>
+						
+					</div> <!--  End Tab-Content  -->
+					
+						<div class="more_comments">
+						
+								<a href="">View more comments</a>
+						
+								<span class="number_comments">49 of 125</span>
+						
+						</div>
+						
+						<ul class="tab-content">	
+							<li class="activity_post clear">
+								<div class="post-img">
+									<img src="../img/test_woman3.jpg" >
+								</div>
+					
+								<div class="post-text" ng-include=" 'views/user/post-actions.html' ">
+						
+								</div>		
+							</li>
+						</ul>
+			
+			</section>
+		
+		</div>	 <!-- START THE THIRD COLUMN -->
+
+		<div class="column quarter activity-column">
+				
+				<article class="clear">
+					
+					<h5>Trending Tags</h5>
+					
+					<ul>
+						<li><a href="">Women</a></li>
+						<li><a href="">Community</a></li>
+						<li><a href="">Politics</a></li>
+						<li><a href="">Poverty</a></li>
+						<li><a href="">Food</a></li>
+						<li><a href="">NGO</a></li>
+					</ul>	
+				
+					<h5>Recommended Groups</h5>
+					
+					<ul>
+						<li class="clear">
+							<img  src="../img/profile_thumb2.jpg" class="left">
+							<aside clas="right">
+								<h6><a href="">Save the lovely Whales</a></h6>
+								<span class="member_count">99 Members</span>
+								<button class="social-action-button">Join +</button>
+							</aside>	
+							
+						</li>
+						<li class="clear">
+							<img  src="../img/profile_thumb.jpg" class="left">
+							<aside clas="right">
+								<h6><a href="">Save the lovely Whales</a></h6>
+								<span class="member_count">99 Members</span>
+								<button class="social-action-button">Join +</button>
+							</aside>	
+							
+						</li>
+					</ul>
+					
+					<h5>Influences to Follow</h5>
+					
+					<ul>
+						<li class="clear">
+							<img  src="../img/profile_thumb2.jpg" class="left">
+							<aside clas="right">
+								<h6><a href="">Jennifer Anne Williams</a></h6>
+								<span class="member_count">Followed by <a href="">Adam Smith</a></span>
+								<button class="social-action-button">Follow +</button>
+							</aside>	
+							
+						</li>
+						<li class="clear">
+							<img  src="../img/profile_thumb.jpg" class="left">
+							<aside clas="right">
+								<h6><a href="">John Doe</a></h6>
+								<span class="member_count">Followed by <a href="">Jane Williams</a></span>
+								<button class="social-action-button">Follow +</button>
+							</aside>	
+							
+						</li>
+					</ul>
+				
+				</article>
+				
+				<p>Privacy . Terms . Sitemap . More <br/>
+					Copyright 2015 - Powerline
+				</p>	 
+		</div>
+		
+	</section>	
+
+	
+	<footer class="page-foot dark-grey">
+		
+			<article class=" contain">
+				
+				<ul class="foot-list clear">
+					<li><h3>About</h3></li>
+					<li><a href="" title="">Our History</a></li>
+					<li><a href="" title="">Our Team</a></li>
+					<li><a href="" title="">Team Blog</a></li>
+					<li><a href="" title="">Features &amp; Pricing</a></li>
+					<li><a href="" title="">Public Accountability</a></li>
+				</ul>
+				
+				<ul class="foot-list clear">
+					<li><h3>Leaders &amp; Groups</h3></li>
+					<li><a href="" title="">Registration</a></li>
+					<li><a href="" title="">More Information</a></li>
+				</ul>
+				
+				<ul class="foot-list clear">
+					<li><h3>Media</h3></li>
+					<li><a href="" title="">Data Analytics</a></li>
+					<li><a href="" title="">Interview Research</a></li>
+					<li><a href="" title="">Media Guidelines</a></li>
+				</ul>
+				
+				<ul class="foot-list clear">
+					<li><h3>Public Research</h3></li>
+					<li><a href="" title="">Free Research<br/> and Analytics</a></li>
+				</ul>
+				
+				<ul class="foot-list clear">
+					<li><h3>Support</h3></li>
+					<li><a href="" title="">General FAQ</a></li>
+					<li><a href="" title="">Public API</a></li>
+					<li><a href="" title="">Security</a></li>
+				</ul>
+				
+				<ul class="foot-list clear">
+					<li><h3>Fine Print</h3></li>
+					<li><a href="" title="">Community Guidelines</a></li>
+					<li><a href="" title="">Terms &amp; Conditions</a></li>
+					<li><a href="" title="">Privacy</a></li>
+					<li><a href="" title="">Copyright Notice</a></li>
+				</ul>
+				
+				</article>
+			
+			</footer>
+				
+			<footer class="page-foot bottom clear dark-grey">
+				<article class="contain">		
+				
+					<div class="left foot-logo">
+						<img  src="../img/gray_logo.png" >
+					</div>
+				<div class="left social-list">
+					<h3>Follow us</h3>
+					<ul class=" clear">
+						<li>
+							<a href="" class="deep-blue" title=""><span class="icon-facebook"></span></a>
+						</li>
+						<li>
+							<a href="" class="red" title=""><span class="icon-googleplus"></span></a>
+						</li>
+						<li>
+							<a href="" class="basic-blue" title=""><span class="icon-linkedin"></span></a>
+						</li>
+						<li>
+							<a href="" class="light-blue" title=""><span class="icon-twitter"></span></a>
+						</li>
+					</ul>		
+				</div>
+				
+				<div class="contact-list  left">
+					<h3>Contact us</h3>
+					<ul class="clear">
+						<li>
+							<a href=""><span class="icon-tablet"></span> Mobile: 908-433-5678</a>
+						<li>
+						<li>
+							<a href=""><span class="icon-mail"></span>Email: support@powerli.ne</a>
+						<li>	
+					</ul>		
+				</div>
+			</article>	
+	
+			<article class="blue-block clear dark-blue">
+				<div class="foot-contain">
+					<h5 class="left copyright">Copyright 2014 -  Powerline. All Rights Reserved.</h5>
+				
+					<div class="right foot-info">
+						<a>Privacy Policy</a>
+						<a>Sitemap</a>
+					</div>
+				
+				</div>
+			</article>
+	
+	</footer>

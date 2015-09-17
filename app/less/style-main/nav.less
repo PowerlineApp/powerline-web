@@ -1,0 +1,83 @@
+nav {
+  display: block;
+  &.main {
+    z-index: 3;
+    position: relative;
+    .box-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
+    padding: 0 30px;
+    background-color: @brand-primary;
+    height: 40px;
+    display: block;
+    width: 100%;
+
+    a {
+      color: #fff;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 92px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.tabs {
+    border-bottom: solid 1px #e1e1e1;
+    li {
+      position: relative;
+      top: 1px;
+      font-size: 22px;
+      display: block;
+      color: @brand-primary;
+      float: left;
+      min-width: 130px;
+      line-height: 35px;
+      border: solid 1px #e1e1e1;
+      border-left: none;
+      border-radius: 0 18px 0 0;
+      text-align: center;
+      font-weight: 100;
+      &.active {
+        border-bottom: solid 1px #fff;
+        border-left: solid 1px #e1e1e1;
+        border-radius: 18px 18px 0 0;
+      }
+      &:first-child {
+        border-left: solid 1px #e1e1e1;
+        border-radius: 18px 18px 0 0;
+      }
+    }
+    .clearfix();
+  }
+
+  &.breadcrumbs {
+    border-bottom: solid 1px #e1e1e1;
+    width: 100%;
+    .clearfix();
+    background: @body-bg;
+    li {
+      display: block;
+      line-height: 33px;
+      padding: 0 23px 0 12px;
+      float: left;
+      background: url('../../images/bg/arrow-right.png') right center no-repeat;
+      &:first-child{padding-left: 0;}
+      &:last-child{background: none;}
+      a {
+        font-weight: 100;
+        color: #bababa;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

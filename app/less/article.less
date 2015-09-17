@@ -1,0 +1,115 @@
+.main-article {
+  font-size: 15px;
+  h1 {
+    color: #659bcf;
+    font-size: 22px;
+    margin: 10px 0 20px 0;
+  }
+  a {
+    text-decoration: underline;
+    color: #78a8d4;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.text-dark {
+  color: #787c81;
+}
+
+.text-sm {
+  font-size: 11px;
+}
+
+.text-error {
+  color: #f30a00;
+}
+
+.text-block-message {
+  display: inline-block;
+  padding: 15px 50px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+[ng-click] {
+  .user-select(none);
+  cursor: pointer;
+}
+
+p.logo {
+  .size(245px, 74px);
+  display: inline-block;
+  background: url("../images/logo.png") center center no-repeat;
+}
+
+.answer-options {
+  fieldset {
+    border: none;
+    padding: 0;
+    padding-right: 35px;
+  }
+
+  .checkbox-field-long,
+  .checkbox-field {
+    border-top: solid 1px #ddd;
+    position: relative;
+
+    p {
+      font-size: 16px;
+      color: #b8b9bb;
+      line-height: 55px;
+      width: 100%;
+      height: 55px;
+      border-top: solid 1px #f7f7f7;
+      text-indent: 55px;
+      .ellipsisRows(1);
+    }
+
+    span {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      display: block;
+      line-height: 22px;
+      background: #dcdcdc;
+      border: solid 1px #d1d1d1;
+      border-radius: 13px;
+      top: 13px;
+      left: 13px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+
+      i {
+        -webkit-box-sizing: border-box;
+        display: none;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        background: #77a235;
+        border: solid 1px #7d9b4f;
+        border-radius: 10px;
+      }
+    }
+
+    &.active p { color: #313438; }
+    &.active span i { display: inline-block; }
+  }
+
+  .checkbox-field-long {
+    padding-left: 55px;
+    line-height: 50px;
+    height: 55px;
+    p {
+      text-indent: 0px;
+      .ellipsisRows(2);
+      font-size: 13px;
+      line-height: 1.4em;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
