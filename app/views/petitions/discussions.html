@@ -1,0 +1,19 @@
+<div class="loading" ng-show="loading_comments"></div>
+<div class="articles-list-tree" ng-repeat="comment in comment.children" tree>
+    <article class="item text-dark">
+        <header class="row">
+            <figure class="col-10-1">
+                <img ng-src="{{ comment.author_picture }}" width="35">
+            </figure>
+            <div class="title col-10-9">
+                <h5>{{ comment.user.username }}</h5>
+                <time ng-bind="(comment.created_at | elapsed) + ' ago'"></time>
+                <span class="absolute-rt">{{ comment.rate_sum }}</span>
+            </div>
+        </header>
+        <div class="content">
+            <p>{{ comment.comment_body }}</p>
+        </div>
+    </article>
+    <branch></branch>
+</div>

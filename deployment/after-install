@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo chown -R civix:civix /srv/civix-web &&
+sudo -u civix ln -sf /srv/config/config.js /srv/civix-web/config/config.js

@@ -1,0 +1,109 @@
+<header ng-include=" 'views/header.html' "></header>
+
+
+		<ul id="process-block" class="clear contain">
+				<li><a href="/group-membership.php">Membership Settings<br><span class="icon-record "></span></a></li>
+				<li><a href="/group-settings.php">Group Settings<br><span class="icon-record active"></span></a></li>
+				<li><a href="/group-advanced.php">Advanced Settings<br><span class="icon-record"></span></a></li>
+		</ul>
+			
+		<div class="progress-bg"></div>
+			
+		<div class="contain main-content clear">
+		
+			<header id="content-head" class="clear"> <!-- Begin Page Header -->
+				<h2>Group Settings</h2>
+		
+			</header>
+			
+				<form class="group-form group-settings">
+				
+					<article> <!-- REQUIRE USER FEE -->
+							<input id="user_fee" type="checkbox">
+							<label for="user_fee" >
+								<h3>Require Users to Pay Fee?</h3>
+							</label>
+					
+							<p>When users join your group, they will be charged <input name="user_fee" max="99" maxlength="2" id="user_fee_amount" type="number" size="3" step="1" placeholder="$25"> on a 
+						
+							<select>
+								<option>Monthly</option>
+								<option>Yearly</option>
+							</select>
+							basis.
+						</p>
+					</article> 
+					
+					<article><!-- ANONYMOUS USER NAME GROUP -->
+						
+							<input id="anon_username" type="checkbox">
+						
+							<label for="anon_username">
+								<h3>Require Users to Create An Anonymous Username for this Group</h3>
+							</label>
+						
+							<p class="details"><span class="icon-info"></span>When users join your group, they will be prompted to create an anonymous username that will represent all of their activity in the group.</p>
+					
+					</article>
+			
+					<article> <!-- USER INFORMATION GROUP -->			
+							
+							<input id="user_information" type="checkbox">
+							
+							<label for="user_information">
+								<h3>Require Users to Provide Information When Joining Group</h3>
+							</label>
+							
+							<p class="details"><span class="icon-info"></span>When users join your group, they will be asked to answer these questions before proceeding. You can access this data as group manager in your membership directory.</p>
+							
+							<button type="button" id="show-input" class="add-new-button">Add New</button>
+					
+							<table id="information-contain" > <!-- CONTAINER FOR USER QUESTIONS -->
+							
+							</table>
+					
+							<table id="question-input"> <!-- CONTAINER FOR QUESTION INPUT -->
+	
+								<tr>
+									<td class="table_input"><input id="user_question" name="user_questions" type="text" placeholder="ex. What is your current work?"></td>
+
+									<td class="table_button"><button type="button" id="question-add" class="add-button">Add</button></td>
+								</tr>
+
+							</table>
+					
+					</article>
+					
+					<article id="welcome-message">
+						
+						<input type="checkbox" name="" id="welcome_message" >
+						
+						<label for="welcome_message">
+							<h3>Add Welcome Message</h3>
+						</label>
+						
+						<input type="text" name="welcome_text" placeholder="ex. 'Welcome to Our Group'"  >
+						
+						<p class="details"><span class="icon-info"></span>When users join your group, they will be sent this optional welcome message. You can use this to set ground rules, share important information or just to welcome them.</p>
+				
+					</article> <!-- /End Welcome Message -->
+				
+				</form>
+			
+				<footer class="premium-banner clear">
+					<p class="details"><span class="icon-info"></span>As a premium user, you can change these settings at any time. <a href="">Upgrade Now</a></p>
+				</footer>	
+			
+		</div><!-- Contain-->
+		
+		<nav class="foot-nav contain clear">
+				<a class="nav-button clear prev" href="#registration/group-settings"><span>&ltrif;</span> Back To Group Settings </a>
+				<a class="nav-button next" href="#registration/group-advanced-settings">Next- Advanced Settings &rtrif;</a>
+		</nav>
+		
+	
+		<footer class="contain">
+		
+				<h5>Copyright 2014 Powerline. All Rights Reserved.</h5>
+		
+		</footer>

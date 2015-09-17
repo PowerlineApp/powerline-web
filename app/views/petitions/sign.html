@@ -1,0 +1,23 @@
+<p class="text-dark" ng-click="data.is_agree_terms = !data.is_agree_terms" ng-show="!hide_sign_form">
+    <i class="icon-checkbox" ng-class="{checked: data.is_agree_terms}"></i>
+    Agree to <a href="#/terms">terms and conditions</a>
+</p>
+
+<p class="text-dark" ng-click="data.privacy = !data.privacy" ng-show="!hide_sign_form">
+    <i class="icon-checkbox" ng-class="{checked: data.privacy}"></i>
+    Hide my identity for this petition from the public
+</p>
+
+<p ng-show="sign_message" ng-class="{'text-error': is_sign_error, 'text-primary': !is_sign_error}" class="text-block-message">{{ sign_message }}</p>
+
+<div class="margin-v-20" ng-show="!hide_sign_form">
+    <button class="btn btn-primary btn-210" ng-click="openLoginForm()" ng-disabled="!data.is_agree_terms">Sign...</button>
+    <button class="btn btn-fb" ng-disabled="!data.is_agree_terms || !is_facebook_loaded" ng-click="signWithFacebook()"><i class="icon-fb"></i> Sign with Facebook...</button>
+</div>
+
+<div class="fixed-overlay" ng-show="is_overlay_visible" ng-click="hideOverlay()">
+    <div class="popup padding-30" ng-click="$event.stopPropagation()" ng-show="is_login_form_visible">
+        <login-form on-success="sign(loginFormScope)"></login-form>
+    </div>
+    <div class="loading loading-fixed" ng-show="loading"></div>
+</div>

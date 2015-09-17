@@ -1,0 +1,20 @@
+<section>
+    <p class="logo"></p>
+    <form class="form-md margin-10 margin-b-20">
+        <p class="text-danger">{{ error }}</p>
+        <fieldset ng-show="!loading">
+            <div class="text-field">
+                <input type="text" name="username" ng-model="login_data.username" placeholder="Username" />
+            </div>
+            <div class="text-field">
+                <input type="password" name="password" ng-model="login_data.password" placeholder="Password" />
+            </div>
+        </fieldset>
+        <button class="btn btn-primary btn-block" ng-click="login()" ng-show="!loading">Log in</button>
+        <button class="btn btn-fb margin-v-20" ng-show="!loading" ng-click="loginWithFacebook()"><i class="icon-fb"></i> Log in with Facebook</button>
+    </form>
+    <div class="loading loading-md" ng-show="loading"></div>
+    <p class="margin-0">
+        <a href="#/forgot-password">Forgot Password?</a>
+    </p>
+</section>

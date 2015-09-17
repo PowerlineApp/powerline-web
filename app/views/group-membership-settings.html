@@ -1,0 +1,128 @@
+<header ng-include=" 'views/header.html' "></header>
+
+
+		<ul id="process-block" class="clear contain">
+				<li><a href="/group-membership.php">Membership Settings<br><span class="icon-record active"></span></a></li>
+				<li><a href="/group-settings.php">Group Settings<br><span class="icon-record "></span></a></li>
+				<li><a href="/group-advanced.php">Advanced Settings<br><span class="icon-record"></span></a></li>
+		</ul>
+			
+		<div class="progress-bg"></div>
+			
+		<div class="contain main-content clear">
+		
+			<form class="group-form membership-form">
+			
+				<header id="content-head" class="clear"> <!-- Begin Page Header -->
+				
+					<h2>Membership Settings</h2>
+				
+					<h3 class="section-title">Select Membership Control</h3>
+					
+					<ul id="membership-controls" class="clear">
+						
+						<li>
+							<input type="radio" id="open_group" name="memberControl">
+							<label for="open_group">
+							<div class="circle-price clear">
+								<span class="icon-men-suits top"></span> 
+							</div>
+							<h3>Open Group</h3>
+							<p>Anyone can join the group<br>No password need to join.</p>
+							</label>
+						</li>
+					
+						<li>
+							<input type="radio" id="password_protected"  name="memberControl">
+							<label for="password_protected">
+							<div class="circle-price clear">
+								<span class="icon-password top"></span> 
+							</div>
+							<h3>Password-Protected</h3>
+							<p>Anyone can join the group<br>No password need to join.</p>
+							</label>
+						</li>
+					
+						<li>
+							<input type="radio" id="review_and_approve" name="memberControl">
+							<label for="review_and_approve">
+							<div class="circle-price clear">
+								<span class="top icon-person-checkbox"></span> 
+							</div>
+							<h3>Review &amp; Approve</h3>
+							<p>Anyone can join the group<br>No password need to join.</p>
+							</label>
+						</li>
+				
+					</ul>
+			
+				</header>
+			
+				<article id="subgroups" > <!-- ENTER SUBGROUPS -->
+				
+					<h3 class="section-title">Enter Subgroups</h3>
+				
+					<p>Group your members according to their role/status(Donors, Officers, etc.). You can also set the visiblity of the subgroup to the members. This is optional and can be changed at any time.</p>
+					<p class="info"><em>Visible</em> - members can see that they are assigned to this subgroup</p>
+					<p class="info"><em>Invisible</em> - members <em>cannot</em> see that they are assigned to this subgroup</p>
+				
+					<button id="add-group" class="add-new-button" type="button">Add New</button>
+					
+					<table id="added_groups">
+					
+					</table>
+		
+					<table id="sub-groups">
+							<tr id="add-field" class="added">
+								<td class="table_input"><input id="group_name" type="text" placeholder="Enter Subgroup name (eg. Members, Sales Dept. etc.) "></td>
+								<td class="table_select">
+									<select>
+										<option>Visible</option>
+										<option>Invisible</option>
+									</select>
+								</td>
+								<td class="table_button">
+									<button type="button" id="add_group_button" class="add-button">Add</button>
+								</td>
+						</tr>
+					</table>
+					
+				</article>
+					
+				<article id="invite-members"> <!-- INVITE MEMBERS -->
+						
+						<h3 class="section-title">Invite Members</h3>
+						
+						<input type="text" id="member_field" placeholder="Enter email addresses separated by commas." >
+						
+						<button type="button" id="invite-member" class=" add-button">Add</button>
+					
+						<aside id="invites-container">
+						
+						</aside>
+					
+				</article>
+					
+				<p class="details"><span class="icon-info"></span>Premium users can invite more than 100 users via e-mail at a time.</p>
+					
+			</form> <!-- END GROUP FORM -->
+			
+		<footer class="premium-banner clear"> <!-- UPGRADE BANNER -->
+				
+			<p class="details"><span class="icon-info"></span>As a premium user, you can change these settings at any time. <a href="">Upgrade Now</a></p>
+			
+		</footer>
+		
+		
+	</div><!-- Contain-->
+	
+	<nav class="foot-nav contain clear">
+			<a class="nav-button next" href="#/registration/group-settings">Next - Group Settings &rtrif;</a>
+	</nav>
+	
+	
+		<footer class="contain">
+		
+				<h5>Copyright 2014 Powerline. All Rights Reserved.</h5>
+		
+		</footer>
