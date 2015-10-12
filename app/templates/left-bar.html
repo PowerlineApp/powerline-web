@@ -1,0 +1,167 @@
+        
+
+            <div class="profilePic">
+
+                <img 
+                ng-if="!homeCtrlParams.leftBar.user && !homeCtrlParams.leftBar.group" 
+                ng-src="{{homeCtrlParams.leftBar.currUser.avatar_file_name}}" alt="">
+
+                <img 
+                ng-if="homeCtrlParams.leftBar.user" 
+                ng-src="{{homeCtrlParams.leftBar.user.avatar_file_name}}" alt="">
+
+                <img 
+                ng-if="homeCtrlParams.leftBar.group" 
+                ng-src="{{homeCtrlParams.leftBar.group.avatar_file_path}}" alt="">
+
+                <!--<i class="icon editIcon"></i>-->
+
+            </div>
+
+            <div class="profileTitle">
+                <span 
+                ng-if="!homeCtrlParams.leftBar.user && !homeCtrlParams.leftBar.group"
+                ng-bind="homeCtrlParams.leftBar.currUser.full_name || homeCtrlParams.leftBar.currUser.first_name "></span>
+
+                <span 
+                ng-if="homeCtrlParams.leftBar.user" 
+                ng-bind="homeCtrlParams.leftBar.user.full_name || homeCtrlParams.leftBar.user.first_name"></span>
+
+                <span 
+                ng-if="homeCtrlParams.leftBar.group"
+                ng-bind="homeCtrlParams.leftBar.group.official_title"></span>
+
+            </div>
+
+            <div class="profileDesc" ng-if="homeCtrlParams.leftBar.group.official_description">
+
+                {{homeCtrlParams.leftBar.group.official_description}} 
+
+                
+
+            </div>
+
+            
+
+            <div class="aboutProfileDetail">
+
+                <ul>
+                    <!--<li ng-if="homeCtrlParams.leftBar.group."><i class="icon greyCalendarIcon"></i>Date Formed: {{homeCtrlParams.leftBar.group.official_description}}</li>-->
+
+                    <!--<li ng-if="!homeCtrlParams.leftBar.group && (homeCtrlParams.leftBar.user.birth || homeCtrlParams.leftBar.currUser.birth)"><i class="icon greyCalendarIcon"></i>Date of Birth: {{homeCtrlParams.leftBar.user.birth || homeCtrlParams.leftBar.currUser.birth}}</li>-->
+                    
+
+                    <li ng-if="homeCtrlParams.leftBar.group.total_members"><i class="icon memberIcon"></i>Members: {{homeCtrlParams.leftBar.group.total_members}}</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="userGroup">
+
+                <div class="titleText" >
+                    {{ items.groups.name }} 
+                    <a ng-click="navigate(items.groups)" >
+                        ({{filteredGroups.length}})
+                    </a>
+                </div>
+
+                <div class="userGroupDetail">
+
+                    <div class="profilPicList">
+
+                        <ul>
+
+                            <li ng-repeat="grp in filteredGroups = (homeCtrlParams.filter.groups | filter: { group_type: 0 })">
+                                <a href="javascript:;" ng-click="navigateTo('group-profile', grp)">
+                                    <img ng-src="{{grp.avatar_file_path}}" alt="{{grp.official_title}}">
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="/groups/search">
+                                    <img src="images/plus.png">
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="userGroup">
+
+            <div class="titleText" >
+                {{ items.influences.name }} 
+                <a ng-click="navigate(items.influences)" >
+                    ({{homeCtrlParams.filter.myInfluences.length}})
+                </a>
+            </div>
+
+                <div class="userInfluences">
+
+                    <div class="profilPicList">
+
+                        <ul>
+
+                            <li ng-repeat="item in homeCtrlParams.filter.myInfluences">
+                                <a href="javascript:;" ng-click="navigateTo('path', 'influence/profile', item.get('user').id)">
+                                    <img ng-src="{{ item.get('user').avatar_file_name }}" alt="">
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="/influences/add">
+                                    <img src="images/plus.png">
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="userGroup" ng-if="homeCtrlParams.filter.myRepresentatives.length">
+
+                <div class="titleText" >
+                    {{ items.representatives.name }} 
+                    <a ng-click="navigate(items.representatives)" >
+                        ({{homeCtrlParams.filter.myRepresentatives.length}})
+                    </a>
+                </div>
+
+                <div class="userInfluences">
+
+                    <div class="profilPicList">
+
+                        <ul>
+
+                            <li ng-repeat="representative in homeCtrlParams.filter.myRepresentatives.slice(0,4)" >
+                                <a href="javascript:;" ng-click="navigateToProfile(representative)">
+                                    <img ng-src="{{representative.avatar_file_path}}" alt="{{representative.first_name}}">
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    
+
+                </div>
+
+            </div>

@@ -1,0 +1,14 @@
+{
+  "name": "ddslick",
+  "homepage": "https://github.com/prashantchaudhary/ddslick",
+  "_release": "5c1eca60c9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5c1eca60c927766ada5eb54b137ea6dd4ccffbea"
+  },
+  "_source": "git://github.com/prashantchaudhary/ddslick.git",
+  "_target": "*",
+  "_originalSource": "ddslick",
+  "_direct": true
+}

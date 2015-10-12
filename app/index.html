@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Powerline</title>
+    <base href="/">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <script src="js/vendor/jquery/jquery.min.js"></script>
+    <script src="js/vendor/angular/angular.min.js"></script>
+    <script src="js/vendor/angular-route/angular-route.min.js"></script>
+    <script src="js/vendor/angular-touch/angular-touch.min.js"></script>
+    <script src="js/vendor/angular-resource/angular-resource.min.js"></script>
+    <script src="js/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="js/vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="js/vendor/underscore/underscore-min.js"></script>
+    <script src="js/vendor/ionic/js/ionic.min.js"></script>
+    <script src="js/vendor/iscroll/build/iscroll-lite.js"></script>
+    <script src="js/vendor/momentjs/min/moment.min.js"></script>
+    <script src="js/vendor/js-collection/angular-js-collection.js"></script>
+    <script src="js/vendor/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="js/vendor/bluebird/js/browser/bluebird.js"></script>
+    <script src="js/vendor/Autolinker.js/dist/Autolinker.min.js"></script>
+    <script src="js/vendor/angular-bindonce/bindonce.min.js"></script>
+    <script src="js/vendor/textarea-caret-position/index.js"></script>
+    <script src="js/vendor/ng-facebook/ngFacebook.js"></script>
+
+    <script src="js/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap/dist/css/bootstrap.css" />
+
+    <script src="js/vendor/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/vendor/jquery-ui/themes/smoothness/jquery-ui.css" />
+
+    <script type="text/javascript" src="js/vendor/ddslick/jquery.ddslick.js"></script>
+
+    <script type="text/javascript" src="js/vendor/tagcanvas/jquery.tagcanvas.js"></script>
+
+    <script src="js/vendor/bootbox/bootbox.js"></script>
+    <script src="js/vendor/ngBootbox/dist/ngBootbox.js"></script>
+
+    <script src="js/vendor/ngImgCrop/compile/minified/ng-img-crop.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/vendor/ngImgCrop/compile/minified/ng-img-crop.css">
+
+    <link rel="stylesheet" type="text/css" href="js/vendor/components-font-awesome/css/font-awesome.css" />
+
+    <script src="js/vendor/zeroclipboard/dist/ZeroClipboard.js"></script>
+    <script src="js/vendor/angular-zeroclipboard/src/angular-zeroclipboard.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/media-queries.css" />
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width,
+          initial-scale=1.0,
+          maximum-scale=1.0,
+          minimum-scale=1.0,
+          user-scalable=no" />
+
+    <!-- css3-mediaqueries.js for IE less than 9 -->
+
+    <!--[if lt IE 9]>
+
+        <script src="js/vendor/respond.min.js"></script>
+
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+
+        <script src="js/vendor/html5shiv-printshiv.js"></script>
+
+    <![endif]-->
+
+</head>
+<body ng-class="bodyClass">
+<div id="container" ng-class="containerClass">
+
+    <header class="top-bar" id="header" ng-controller="topBar"  ng-include="'templates/top-bar.html'"></header>
+    
+    <section class="container container-fluid mainContainer">
+        <div class="row">
+            <div class="col-md-3 containerLeftSection" ng-controller="mainMenu"  ng-include="'templates/left-bar.html'" ></div>
+            <div class="col-md-6 content" ng-view ></div>
+            <div class="col-md-3 containerRightSection" ng-controller="rightBar" ng-include="'templates/right-bar.html'"></div>
+        </div>
+    </section>
+
+    <!-- build:js js/app-min.js -->
+    <script src="js/app/app.js"></script>
+    <script src="js/app/config.js"></script>
+    <script src="js/app/controllers.js"></script>
+    <script src="js/app/directives.js"></script>
+    <script src="js/app/filters.js"></script>
+    <script src="js/app/services.js"></script>
+
+    <!-- Services -->
+    <script src="js/app/services/session.js"></script>
+    <script src="js/app/services/layout.js"></script>
+    <script src="js/app/services/i-storage.js"></script>
+    <script src="js/app/services/activity.js"></script>
+    <script src="js/app/services/social-activity.js"></script>
+    <script src="js/app/services/questions.js"></script>
+    <script src="js/app/services/representatives.js"></script>
+    <script src="js/app/services/groups.js"></script>
+    <script src="js/app/services/petitions.js"></script>
+    <script src="js/app/services/utils.js"></script>
+    <script src="js/app/services/influence.js"></script>
+    <script src="js/app/services/notifications.js"></script>
+    <script src="js/app/services/discussion.js"></script>
+    <script src="js/app/services/announcements.js"></script>
+    <script src="js/app/services/search.js"></script>
+    <script src="js/app/services/guide.js"></script>
+    <script src="js/app/services/invites.js"></script>
+    <script src="js/app/services/follows.js"></script>
+    <script src="js/app/services/users.js"></script>
+    <script src="js/app/services/payment.js"></script>
+    <script src="js/app/services/flurry.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/app/controllers/top-bar.js"></script>
+    <script src="js/app/controllers/session/login.js"></script>
+    <script src="js/app/controllers/session/forgot-password.js"></script>
+    <script src="js/app/controllers/session/registration.js"></script>
+    <script src="js/app/controllers/session/registration-step2.js"></script>
+    <script src="js/app/controllers/session/registration-step3.js"></script>
+    <script src="js/app/controllers/home.js"></script>
+    <script src="js/app/controllers/profile.js"></script>
+    <script src="js/app/controllers/question.js"></script>
+    <script src="js/app/controllers/representatives.js"></script>
+    <script src="js/app/controllers/groups.js"></script>
+    <script src="js/app/controllers/petitions.js"></script>
+    <script src="js/app/controllers/influence.js"></script>
+    <script src="js/app/controllers/discussion.js"></script>
+    <script src="js/app/controllers/messages.js"></script>
+    <script src="js/app/controllers/search.js"></script>
+    <script src="js/app/controllers/widget.js"></script>
+    <script src="js/app/controllers/settings.js"></script>
+    <script src="js/app/controllers/services.js"></script>
+    <script src="js/app/controllers/payment-request.js"></script>
+    <script src="js/app/controllers/leader-event.js"></script>
+    <script src="js/app/controllers/guide.js"></script>
+
+    <!-- Directives -->
+    <script src="js/app/directives/common-animations.js"></script>
+    <script src="js/app/directives/forms.js"></script>
+    <script src="js/app/directives/pull-down.js"></script>
+    <script src="js/app/directives/link.js"></script>
+    <script src="js/app/directives/groups.js"></script>
+    <script src="js/app/directives/tree.js"></script>
+    <script src="js/app/directives/pie.js"></script>
+    <script src="js/app/directives/discussions.js"></script>
+    <script src="js/app/directives/cards.js"></script>
+    <script src="js/app/directives/ionic.js"></script>
+    <script src="js/app/directives/media.js"></script>
+    <script src="js/app/directives/guide.js"></script>
+    <script src="js/app/directives/autocomplete.js"></script>
+    <script src="js/app/directives/ddSelect.js"></script>
+    <script src="js/app/directives/slideable.js"></script>
+    <script src="js/app/directives/ngenter.js"></script>
+    <!-- endbuild -->
+</div>
+</body>
+</html>

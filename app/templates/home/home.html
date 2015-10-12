@@ -1,0 +1,113 @@
+<div class="postFieldWrapper" >
+
+             <form name="petitionForm" novalidate ng-class="formClass" ng-submit="create();" autocomplete="off">
+
+                <div class="right">
+
+                <select 
+                    ng-if="filter.displayGroups" 
+                    name="group"  
+                    dd-select="filter.displayGroups" 
+                    icon="avatar_file_path" 
+                    acronym="acronym" 
+                    text="official_title" 
+                    value="id" 
+                    count="unansweredCount" 
+                    highlight="filter.selectedGroup" 
+                    click="filter.selectedGroup"
+                ></select>
+                    
+
+                </div>
+
+                <div class="tabs" style="margin-top:0px;">
+
+                    <ul>
+
+                        <li ng-class="{'active':data.type==petition_types[0]}" ng-click="data.type=petition_types[0]"><a href="javascript:;" ><i class="icon pencilIcon"></i> New Post</a></li>
+
+                        <li ng-class="{'active':data.type==petition_types[2]}" ng-click="data.type=petition_types[2]"><a href="javascript:;" ><i class="icon paperPenIcon"></i> New Petition</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="tabContainer">
+
+                
+
+                    
+
+                        
+                        <div ng-show="data.type==petition_types[2]" class="title-field tabContainerField" ng-class="invalidClass(petitionForm.title.$invalid)">
+
+                            <input type="text" ng-model="data.title" name="title" maxlength="255" ng-required='data.type==petition_types[2]' placeholder="Type title here" />
+
+                        </div>
+
+                        <div class="tabContainerField">
+
+                            <textarea 
+                                ng-if="data.type==petition_types[0]"
+                                ng-model="data.petition_body"
+                                name="petition_body" 
+                                required placeholder="Type your message here" 
+                                maxlength="300" 
+                                ng-init="data.chars_left = 300"
+                                ng-change="data.chars_left = 300 - data.petition_body.length"
+                            ></textarea>
+
+                            <textarea 
+                                ng-if="data.type==petition_types[2]" 
+                                ng-model="data.petition_body"
+                                name="petition_body" 
+                                required placeholder="Type your message here" 
+                                maxlength="2500" 
+                                ng-init="data.chars_left = 2500"
+                                ng-change="data.chars_left = 2500 - data.petition_body.length"
+                            ></textarea>
+
+                            <span class="remainingWord" ng-bind="data.chars_left"></span>
+                            
+                        </div>
+                        
+                        
+
+                        <div class="tabContainerField">
+
+                            <div ng-show="filter.currGrp1.available" class="left remainingPetition">
+                                {{ filter.currGrp1.available }} petitions left in this group
+                            </div>
+
+                            <section class="ng-hide">
+                                <input type="hidden" ng-model="data.group" name="group">
+                                <input type="hidden" ng-model="user_expire_interval" name="user_expire_interval">
+                                <input type="hidden" ng-model="data.type" name="type">
+                            </section>
+
+                            <div class="right postSubmitBtn">
+                                <input type="submit" value="Post">
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                    
+
+                    
+
+                </div>
+
+                </form>
+
+             </div>
+
+             
+             <div class="wrap-center" style="position: static;padding-top: 50px;" ng-show="loading"><spinner></spinner></div>
+<p class="info-message" ng-show="!loading && !activities.length && !filter.selectedGroup">
+  Hmm - Your newsfeed is empty! Looks like a great opportunity to take a stand, start a discussion,
+  or improve your community by creating a post or petition.
+</p>
+<section ng-show="!loading"
+         ng-style="{'height': (minContentHeight - 134)}"
+         class="activity-list-wrap" ng-include=" 'templates/home/activities.html' "></section>

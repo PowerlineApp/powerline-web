@@ -1,0 +1,198 @@
+       
+
+            <div class="sidepanelContainer">
+
+                <div class="sidepanelContent">
+
+                    <div class="sidePanelTitle">Trending Tags</div>
+
+                    <div class="sidePanelDetail">
+
+                        <div id="myCanvasContainer">
+
+                         <canvas width="270" height="183" id="myCanvas">
+
+                          <p>Anything in here will be replaced on browsers that support the canvas element</p>
+
+                          <ul>
+
+                           <li><a href="http://www.google.com" target="_blank">Google</a></li>
+
+                           <li><a >Women</a></li>
+
+                           <li><a >Community</a></li>
+
+                           <li><a >Politics</a></li>
+
+                           <li><a >Education</a></li>
+
+                           <li><a >NGO</a></li>
+
+                           <li><a >Food</a></li>
+
+                           <li><a >Welfare</a></li>
+
+                           <li><a >Poverty</a></li>
+
+                           <li><a >Food</a></li>
+
+                          </ul>
+
+                         </canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="sidepanelContent">
+
+                    <div class="sidePanelTitle">Recommended Groups</div>
+
+                    <div class="sidePanelDetail">
+
+                        <div class="suggestionBox" ng-repeat="item in homeCtrlParams.filter.recommendedGroups">
+
+                            <div class="suggestionBoxImg left">
+
+                                <!--<img height="48" width="48" src="images/groupImg1.png" alt="">-->
+                                <a href="javascript:;" ng-click="navigateTo('group-profile', item)">
+                                    <img height="48" width="48" ng-src="{{ item.avatar_file_path }}">
+                                </a>
+
+                            </div>
+
+                            <div class="suggestionBoxText left">
+
+                                <div  class="groupTitle">
+                                        <a href="javascript:;" ng-click="navigateTo('group-profile', item)">{{ item.official_title }}</a>
+                                    </div>
+
+                                <div class="memeberCount" ng-if="item.total_members">{{ item.total_members }} Members</div>
+
+                                <div class="joinBtn"><a href="javascript:;" ng-click="navigateTo('group-join', item)">Join <i class="fa fa-plus"></i></a></div>
+                            </div>
+
+                            <div><i class="icon closeIcon"></i></div>
+
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="sidepanelContent" ng-if="homeCtrlParams.filter.influencesToFollow">
+
+                    <div class="sidePanelTitle">Influences to Follow</div>
+
+                    <div class="sidePanelDetail">
+
+                        <div class="sidePanelDetail">
+
+                        <div class="suggestionBox" ng-repeat="item in homeCtrlParams.filter.influencesToFollow">
+
+                            <div class="suggestionBoxImg left">
+
+                                <img src="images/userProfileImg3.png" alt="">
+
+                            </div>
+
+                            <div class="suggestionBoxText left">
+
+                                <div class="groupTitle"><a >Jennifer Anne Williams</a></div>
+
+                                <div class="memeberCount">Followed by <a >Adam Smith</a></div>
+
+                                <div class="joinBtn"><a >Follow <i class="fa fa-plus"></i></a></div>
+
+                            </div>
+
+                            <div><i class="icon closeIcon"></i></div>
+
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <footer>
+
+                <div class="footer">
+
+                  <!--<a class="btn btn-link"
+                    ng-bootbox-title="Privacy"
+                    ng-bootbox-custom-dialog
+                    ng-bootbox-custom-dialog-template="templates/terms.html"
+                    ng-bootbox-buttons="customDialogButtons">
+                      Privacy
+                  </a>-->
+                  <a class="btn btn-link" href="//powerli.ne/privacy" target="blank">Privacy</a>
+                  
+                  &#8226;
+                  <!--<a class="btn btn-link"
+                    ng-bootbox-title="Terms"
+                    ng-bootbox-custom-dialog
+                    ng-bootbox-custom-dialog-template="templates/terms.html"
+                    ng-bootbox-buttons="customDialogButtons">
+                      Terms
+                  </a>-->
+                  <a class="btn btn-link" href="//powerli.ne/terms-conditions" target="blank">Terms</a>
+                  &#8226;
+                  <!--<a class="btn btn-link"
+                    ng-bootbox-title="Sitemap"
+                    ng-bootbox-custom-dialog
+                    ng-bootbox-custom-dialog-template="templates/terms.html"
+                    ng-bootbox-buttons="customDialogButtons">
+                      Sitemap
+                  </a>
+                  <a class="btn btn-link" href="powerli.ne/privacy" target="blank">Privacy</a>
+                  &#8226;-->
+                  <!--<a class="btn btn-link"
+                    ng-bootbox-title="More"
+                    ng-bootbox-custom-dialog
+                    ng-bootbox-custom-dialog-template="templates/terms.html"
+                    ng-bootbox-buttons="customDialogButtons">
+                      More
+                  </a>-->
+                  <a class="btn btn-link" href="//powerli.ne/about" target="blank">More</a>
+                  <br>
+
+Copyright © 2014 -  Powerline
+
+                </div>
+
+            </footer>
+<script type="text/javascript">
+        $(document).ready(function() {
+        if(!$('#myCanvas').tagcanvas({
+          textColour: '#00f',
+          outlineColour: '#ff00ff',
+          reverse: true,
+          depth: 0.8,
+          maxSpeed: 0.05
+        },'tags')) {
+          // something went wrong, hide the canvas container
+          $('#myCanvasContainer').hide();
+        }
+
+        try {
+          TagCanvas.Start('myCanvas');
+        } catch(e) {
+          // something went wrong, hide the canvas container
+          document.getElementById('myCanvasContainer').style.display = 'none';
+        }
+
+      });
+
+</script>
