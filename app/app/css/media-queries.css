@@ -1,0 +1,139 @@
+
+
+@media screen and (max-width: 1200px) {
+.width-content { width:100%; padding:0 3%;}
+.navbarHeader { margin: 0 0 0 15px;}
+.navbarHeader .nav > li > a { padding-left:10px; padding-right:10px; }
+.followBtn { margin: 0 0 0 320px;}
+.newsFeedText { width: 335px;}
+.replyMessageField {width: 350px;}
+.usersReplyMessage .newsFeedText { width: 300px;}
+.suggestionBoxText {width: 120px;}
+}
+
+
+@media screen and (max-width: 1000px) {
+	.logo { width: 49%;}
+	.headerSearchInput { width: 49%; float: right; margin: 7px 0 0 0;}	
+	.headerSearchInput input{ width: 100%;}
+	.navbarHeader { clear: left; width: 49%; margin: 0;}
+	.navbarHeader .container-fluid { padding: 0;}
+}
+
+@media screen and (max-width: 991px) {
+	.newsFeedText {
+    width: 600px;
+}
+	.replyMessageField {
+    width: 620px;
+}
+	.usersReplyMessage .newsFeedText {
+    width: 590px;
+}
+	.containerLeftSection { text-align: center;}
+	.profilePic { margin-top: 10px;}
+	.dd-selected { text-align: left;}
+	.suggestionBoxText {
+    width: 610px;
+}
+	.followBtn { left: auto; margin: 0; right: 15px;}
+	.navbarHeader { width: 70%;}
+	.navbarHeader .navbar-toggle { float: left; margin: 15px 0 0 15px}
+}
+
+@media screen and (max-width: 767px) {
+.navbar-collapse { margin: 0; padding: 0 0 0 20px;}
+	.menuDropTriangle { display: none;}
+	.navbar-nav > li > a { padding: 15px;}
+	.navbar-nav { margin: 7.5px 0;}
+	.navbar-default .navbar-toggle { border-color:transparent; }
+
+.newsFeedText { width: 450px;}
+	.replyMessageField {
+    width: 470px; float: left;
+}
+	.usersReplyMessage .newsFeedText {
+    width: 440px;
+}
+	.suggestionBoxText {
+    width: 470px;
+}
+	.selectPlace { width: 100%; float: none; margin: 10px 0;}
+	.selectPlace .dd-container { width: 100% !important;}
+	.selectPlace .dd-container .dd-select { width: 100% !important;}
+	.selectPlace .dd-container .dd-options { width: 100% !important;}
+	
+}
+
+
+
+@media screen and (max-width: 600px) {
+.newsFeedText {
+    width: 330px;
+}
+	.replyMessageField {
+    width: 350px;
+}
+	.usersReplyMessage .newsFeedText {
+    width: 310px;
+}
+	.suggestionBoxText {
+    width: 340px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+	.navbarHeader {
+    width: auto;
+}
+	.followBtn {
+    bottom: auto;
+    left: auto;
+    margin: 0;
+    right: 2px;
+    top: 2px;
+}
+	.remainingPetition { float: none;}
+	.postSubmitBtn { float: none;}
+	.logo { width: 100%; text-align: center; float: none;}
+	.headerSearchInput { width: 100%;}
+	.myProfileDropdown {
+    margin: 20px 0 0;
+}
+	.tabs ul li { width: 125px;}
+	.tabs ul li a {
+    padding: 10px 0 5px;
+}
+	.newsFeedContentLeft { float: none; text-align: center;}
+	.newsFeedImage { display: inline-block;}
+	.newsFeedText {
+    margin: 10px 0 0;
+    width: 100%;
+}
+	.newsFeedImage  { float: none; margin: 0 auto;}
+	.replyMessageField  { float: none; margin: 10px auto; width: 100%;}
+	.usersReplyMessage { width: 100%; margin: 10px auto; }
+	.replyMessageBox { text-align: center;}
+	.usersReplyMessage .newsFeedText { width: 100%; float: none;}
+	.suggestionBoxText {
+    width: 190px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!-- Collect the nav links, forms, and other content for toggling -->
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="notifications">
+
+  <ul class="nav navbar-nav">
+
+    
+
+    <li class="dropdown " ng-click="activity()" ng-class="getClass('/main')">
+
+        <a class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+            <span class="badge" style="background-color:red;" ng-show="homeCtrlParams.filter.unansweredCount">{{ homeCtrlParams.filter.unansweredCount }}</span>
+            <i class="icon communityIcon"></i> Community
+        </a>
+
+    </li>
+
+    <li class="dropdown " ng-click="followersNotifications()" ng-class="getClass('/influences/notifications')">
+
+        <a class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+            <span class="badge" ng-show="SAState.hasNew || SAState.requestCount">{{ SAState.requestCount || ''}}</span>
+            <i class="icon socialActivityIcon"></i> Social Activity
+        </a>
+
+    </li>
+
+    <li class="dropdown badgeColor" ng-click="goToMessages()" ng-class="getClass('/messages')">
+
+        <a  class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+            <span class="badge" ng-show="messagesCount">{{ messagesCount }}</span>
+            <i class="icon messagesIcon"></i> Messages
+        </a>
+        <!--
+        <div class="dropdown-menu">
+
+            <div class="menuDropTriangle"><img src="images/dropdownTriangle.png" alt=""></div>
+
+            <div class="DropdownListWrapper">
+
+                <ul>
+
+                    <li><a href="#"><i class="icon calIcon"></i> Conference Reminder: 1/7/2015</a></li>
+
+                    <li><a href="#"><i class="icon cardIcon"></i> Payment Due: 2/12/15</a></li>
+
+                    <li><a href="#"><i class="icon alertIcon"></i> Random Alert</a></li>
+
+                    <li><a href="#"><i class="icon ImpNotifIcon"></i> Important Notification</a></li>
+
+                    <li><a href="#"><i class="icon calIcon"></i> Conference Reminder: 1/7/2015</a></li>
+
+                    <li><a href="#"><i class="icon cardIcon"></i> Payment Due: 2/12/15</a></li>
+
+                    <li><a href="#"><i class="icon alertIcon"></i> Random Alert</a></li>
+
+                    <li><a href="#"><i class="icon ImpNotifIcon"></i> Important Notification</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="seeMore">
+
+                <a href="#">See More</a>
+
+            </div>
+
+        </div>
+        -->
+    </li>
+
+    
+
+  </ul>
+
+</div><!-- /.navbar-collapse -->

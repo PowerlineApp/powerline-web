@@ -191,7 +191,7 @@ angular.module('app', [
 
 	
 
-  }).run(function ($rootScope, $location, layout, adminUrl, flurry) {
+  }).run(function ($rootScope, $location, $window, layout, adminUrl, flurry) {
   $rootScope.path = function (path) {
     return $location.path(path);
   };
@@ -202,6 +202,10 @@ angular.module('app', [
   };
   $rootScope.layout = layout;
   $rootScope.$on('$routeChangeSuccess', function () {
+
+    if($window.localStorage.getItem('token')){
+      $window.location.href = '/app';
+    }
     layout.reset();
   });
   $rootScope.adminUrl = adminUrl;
