@@ -2,7 +2,7 @@
 <html ng-app="app">
 <head>
     <title>Powerline</title>
-    <base href="/">
+    <!--<base href="/">-->
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
