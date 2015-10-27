@@ -1,0 +1,33 @@
+ <div class="postFieldWrapper">
+
+    <div class="tabs left">
+        <ul>
+            <li ng-class="{'active':!togglePopular}" ng-click="togglePopular=false"><i class="icon pencilIcon"></i> Most Recent</li>
+            <li ng-class="{'active':togglePopular}" ng-click="togglePopular=true" ><i class="icon paperPenIcon"></i> Most Popular</li>
+        </ul>
+    </div>
+
+    <div class="clearfix"></div>
+
+ </div>
+
+<div class="activities-list"  ng-hide="togglePopular">
+  <div class="activity-margin activity-container" 
+  ng-repeat="activity in activities">
+     <i-activity  activity="activity" bindonce></i-activity>
+     <ng-include ng-show="activity.toggleShare" src="'templates/widget/share.html'"></ng-include>
+     <div class="discussion-container"></div>
+  </div>
+</div>
+
+
+<div class="activities-list"  ng-show="togglePopular">
+    <div class="activity-margin activity-container" 
+    ng-repeat="activity in activities | orderBy : ['-isInPriorityZoneVal','-attributes.responses_count']">
+       <i-activity  activity="activity" bindonce></i-activity>
+       <ng-include ng-show="activity.toggleShare" src="'templates/widget/share.html'"></ng-include>
+       <div class="discussion-container"></div>
+    </div>
+</div>
+
+<div ng-hide="activities" style="padding: 20px;background-color: #fff;color:#ccc;">Nothing to display</div>

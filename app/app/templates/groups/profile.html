@@ -1,0 +1,36 @@
+<section ng-show="showPostWindow" class="new-post-window" ng-click="$event.stopPropagation()">
+    <a ng-click="invite()" class="micropetition">Invite Followers to Group</a>
+</section>
+
+
+<button class="btn-large"
+   ng-show="isChangeAvailable()"
+   ng-click="data.joined ? unjoin() : join()"
+   ng-bind="data.joined ? 'Unjoin' : 'Join'"
+   ng-class="{'btn-primary': !data.joined, 'btn-red1': data.joined}"
+   style="text-transform: capitalize;position: absolute;top: -133px;width: 150px;right: -277px;"></button>
+
+<section>
+    <ul class="info-list">
+        <li ng-show="data.acronym">
+            <p><span>Acronym</span></p>
+            <p ng-bind="data.acronym"></p>
+        </li>
+        <li ng-show="data.manager_phone" ng-click="openSystem('tel:' + data.manager_phone)">
+            <p><span>Phone Number</span></p>
+            <p ng-bind="data.manager_phone"></p>
+            <i class="icon-phone"></i>
+        </li>
+        <li ng-show="data.full_address" ng-click="openSystem((data.full_address | createGoogleMapsLink))">
+            <p><span>Location</span></p>
+            <p ng-bind="data.full_address"></p>
+            <i class="icon-address"></i>
+        </li>
+    </ul>
+</section>
+
+<section ng-show="data.joined">
+    <h3 ng-show="data.activities.length" class="margin-v-10">Recent Activity</h3>
+    <ng-include src=" 'templates/home/activities.html' "></ng-include>
+</section>
+<div class="wrap-center" ng-show="loading"><spinner></spinner></div>
