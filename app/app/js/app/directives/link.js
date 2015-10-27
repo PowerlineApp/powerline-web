@@ -16,7 +16,6 @@ angular.module('app.directives').directive('iOpenSystem',function ($parse, $wind
   return function (scope, element) {
     element.delegate('a', 'click', function (e) {
       e.preventDefault();
-      cordova.exec(null, null, 'InAppBrowser', 'open', [angular.element(e.currentTarget).attr('href'), '_system']);
       return false;
     });
   };
@@ -61,7 +60,7 @@ angular.module('app.directives').directive('iOpenSystem',function ($parse, $wind
 
       var $link = angular.element(e.currentTarget);
       if ($link.attr('href')) {
-        cordova.exec(null, null, 'InAppBrowser', 'open', [$link.attr('href'), '_system']);
+        e.preventDefault();
       } else if ($link.data('user-id')) {
         $location.path('/influence/profile/' + $link.data('user-id'));
       } else if ($link.data('hashtag')) {
