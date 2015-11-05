@@ -1,0 +1,19 @@
+<section style="clear:both; display:block;" >
+<div >
+	<!-- <h2>{{ x.title }}</h2> -->
+</div>	
+</section>
+
+<ul ng-controller="PopularGroupsCtrl">
+	
+	<li ng-repeat="x in popularGroups" class="clear">
+		<img  ng-src="{{x.avatar_file_path}}" class="left">
+		<aside clas="right">
+			<h6><a href="">{{x.official_title}}</a></h6>
+			<span class="member_count">99 Members</span>
+			<button class="social-action-button">Join +</button>
+		</aside>	
+		
+	</li>
+
+</ul>

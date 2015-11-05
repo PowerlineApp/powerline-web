@@ -1,0 +1,270 @@
+<header ng-include=" 'views/header.html' "></header>
+
+
+		<ul id="process-block" class="clear contain">
+			<li>Registration<br><span class="icon-record "></span></li>
+			<li>Tier Selection<br><span class="icon-record"></span></li>
+			<li>Payment<br><span class="icon-record active"></span></li>
+		</ul>
+		
+		<div class="progress-bg"></div>
+
+		<div class="contain main-content clear">
+		
+			<header id="content-head" class="clear"> <!-- Begin Page Header -->
+				<h2>Payment</h2>
+			</header>
+			
+			<section class="tabs"><!-- Begin Tabbed Section -->
+			
+				<ul class="tab-links clear"> <!-- These are the tabs -->
+					<li ng-class="{active: tab === 1}"><a  ng-click="tab = 1" >Billing Information</a></li> 
+					<li ng-class="{active: tab === 2}"><a  ng-click="tab = 2"><span class="icon-locked"></span>Payment Details</a></li>
+					<li ng-class="{active: tab === 3}"><a  ng-click="tab = 3"> Review and Confirm</a></li>
+				</ul>
+
+			<form name="groupCheckoutForm" ng-controller="group-checkout" ng-init="tab = 1" class="form-contain tab-content"> <!-- Let's Start the form -->
+			
+				<div id="tab1" ng-show="tab === 1" class="tab active form clear">
+				
+					<p class="half-form">
+						<label>First Name</label>
+					
+						<input ng-model="groupCheckoutForm.first-name"  type="text">
+					</p>
+					
+					<p class="half-form">
+						<label>Last Name</label>
+					
+						<input type="text">
+					</p>
+					
+					<p class="half-form">
+						<label>Phone Number</label>
+					
+						<input type="text">
+					</p>
+					
+					<p class="half-form">
+						<label>Email</label>
+					
+						<input type="text" placeholder="*email that the user has already entered">
+					</p>
+					
+					<p class="half-form">
+						<label>Street Address</label>
+					
+						<input  type="text">
+					</p>
+					
+					<p class="half-form">
+						<label>Apt/Suite/Office</label>
+					
+						<input type="text">
+					</p>
+					
+					<p class="third-form">
+						<label>Zip Code</label>
+					
+						<input type="text">
+					</p>
+					
+					<p class="third-form">
+						<label>City</label>
+					
+						<input type="text">
+					</p>
+					
+					<p class="third-form">
+						<label>Country</label>
+						<select>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+							<option>Country</option>
+						
+						</select>
+					</p>
+					
+					<nav class="foot-nav contain clear">
+
+						<a class="nav-button next" href ng-click="tab = 2">Next - Payment Details &rtrif;</a>
+					</nav>
+					
+				</div>
+				
+				<div id="tab2"  ng-show="tab === 2" class="form clear tab ">
+					
+					<div class="clear">
+						<header class="clear">
+							<input class="payment_type" name="payment_type" id="pay_via_cc" type="radio">
+							<label class="payment_label" for="pay_via_cc"><h4>Pay Via Credit Card</h4></label>
+						</header>
+						<p class="threequarter-form">
+							<label>Debit/Credit Card Number</label>
+							<input type="text" placeholder="">
+						</p>
+					
+						<p class="quarter-form">
+							<label>Security Code <span class="icon-info tip-toggle"></span></label>
+					
+							<input type="text">
+						</p>
+					
+						<p class="half-form">
+							<label>Expiration Date</label>
+							<input type="month" name="exp_date">
+						</p>
+					
+						<p class="half-form" style="text-align:center;">
+							<img src="../img/payments.jpg" >
+						</p>
+					</div>
+					
+					<div class="clear">
+					
+						<header class="clear">
+							<input class="payment_type" name="payment_type" id="pay_bank" type="radio">
+							<label for="pay_bank" class="payment_label"><h4>Pay Via Bank Transfer</h4>
+						</header>
+					
+					<p class="threequarter-form">
+						<label>Account Holder's Name</label>
+						<input type="text" >
+					</p>
+					
+					<p class="quarter-form">
+						<label>Account Type</label>
+						
+						<select>
+							<option>Savings</option>
+							<option>Checking</option>
+						</select>
+					</p>
+					
+					
+					<p class="half-form">
+						<label>Routing Number</label>
+					
+						<input type="text" >
+					</p>
+					
+					<p class="half-form">
+						<label>Account Number</label>
+					
+						<input type="text" >
+					</p>
+					
+					<p class="half-form">
+						<label>Confirm Routing Number</label>
+					
+						<input type="text" >
+					</p>
+					
+					<p class="half-form">
+						<label>Confirm Account Number</label>
+					
+						<input type="text" >
+					</p>
+					</div>
+					
+					<img id="check-img" src="../img/routingnumber.jpg">
+					
+					
+					<nav class="foot-nav contain clear">
+
+
+						<a class="nav-button next" href ng-click="tab = 3">Next - Review and Confirm &rtrif;</a>
+					</nav>
+									
+				</div>
+				
+				<div id="tab3"  ng-show="tab === 3" class="form clear tab">
+				
+							<div class="icon-box">
+								<span class="icon-vector1"></span>
+							</div>
+
+							<article>
+								<p>Selected Powerline Package <a href="" class="edit-info">Change</a></p>
+								<p>Silver Package</p>
+							</article>
+
+							<div class="icon-box">
+								<span class="icon-home"></span>
+							</div>
+
+							<article>
+								<p>Billing Information <a href="" class="edit-info">Edit</a></p>
+								<p>{{groupCheckoutForm.first-name}} Doe</p>
+								<p>1800.888.8567</p>
+								<p>John Doe@gmail.com</p>
+								<p>99 Your Street, Your city 1800, USA</p>
+							</article>
+					
+							<div class="icon-box">
+								<span class="icon-credit-card"></span>
+							</div>
+
+							<article>
+								<p>Payment <a class="edit-info" href="">Edit</a></p>
+								<p>Visa</p>
+								<p>*1234</p>
+							</article>
+					
+							<nav class="foot-nav contain clear">
+
+
+								<a class="nav-button next" href="/group-start.html"><span class="icon-lock"></span>Secured Checkout &rtrif;</a>
+							</nav>
+					
+				</div>
+				
+			</form>
+			
+			</section>
+			
+			<aside id="side-box">
+				<h3>Your Checkout Progress</h3>
+				
+				<div class="icon-box">
+					<span class="icon-men-suits"></span>
+				</div>
+				
+				<article>
+					<p>Selected Powerline Package <a href="" class="edit-info">Change</a></p>
+					<p>Silver Package</p>
+				</article>
+				
+				<div class="icon-box">
+					<span class="icon-home"></span>
+				</div>
+				
+				<article>
+					<p>Billing Information</p>
+					<p>John Doe</p>
+					<p>1800.888.8567</p>
+					<p>John Doe@gmail.com</p>
+					<p>99 Your Street, Your city 1800, USA</p>
+				</article>
+				
+			</aside>
+		
+			
+			
+		</div><!-- Contain-->
+		
+		<footer class="contain">
+		
+				<h5>Copyright 2014 Powerline. All Rights Reserved.</h5>
+		
+		</footer>
+	
