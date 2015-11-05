@@ -179,15 +179,41 @@
 
 @media only screen and (max-width:760px) {
 	
+	/* All Page Styles */
+	
+	.contain {
+		width:95%;
+	}
+	
+	#top-menu {
+	  float: none;
+	  margin: 0 auto 2em;
+	  height: 100%;
+	  line-height: inherit;
+	  text-align: center;
+	}
+	
+	#top-menu ul li {
+	  display: inline-block;
+	}
+	
+	#pricing-nav {
+		width:90%;
+		button {
+			display:block;
+			width:100%;
+		}
+	}
+	
 	/* HOME PAGE STYLES */
 
 			#home-header {
-			  text-align: center;
-			  background:  url('../../img/home_head_mobile_bg.jpg');
-			  
-			  height: 100%;
-			  padding: 0em 0 7em;
-
+			    text-align: center;
+			    background: url('../../img/home_head_mobile_bg.jpg');
+			    height: 100%;
+			    padding: 0em 0 0em;
+			    border-bottom: 1px solid #000066;
+			    border-top: 1px solid #000006;
 				.slide h2 {
 				  	margin: 0.5em auto;
 				}
@@ -206,10 +232,20 @@
 				  width: 95%;
 				  margin: 1em auto 0;
 			}
+			
+			.foot-tagline {
+				bottom: 0;
+			    z-index: 1000;
+			    background-color: black;
+			    width: 100% !important;
+			    margin-top: 3em;
+				position:relative;
+			}
 
 			.slide-question {
-				display:none;
-
+				float: right;
+			    right: 3%;
+			    position: relative;
 				p { 
 					width:100%;
 				}	
@@ -372,12 +408,14 @@
 	#top-menu {
 		float:none;
 		margin:0 auto;
-		height: 50px;
 	  	line-height: 50px;
 	}
 	
 	.download {
 		width: 100%;
+		h4 {
+			margin: 0.25em auto;
+		}
 	}
 	
 	.logo {
@@ -451,25 +489,7 @@
 
 @media only screen and (max-width:760px) {
 
-		#top-menu {
-		  float: none;
-		  margin: 0 auto 2em;
-		  height: 100%;
-		  line-height: inherit;
-		  text-align: center;
-		}
-		
-		#top-menu ul li {
-		  display: block;
-		}
-		
-		#pricing-nav {
-			width:90%;
-			button {
-				display:block;
-				width:100%;
-			}
-		}
+
 
 }
 
