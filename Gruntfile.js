@@ -245,7 +245,7 @@ module.exports = function (grunt) {
                     src: [
                         'scripts/**/*',
                         'index.html',
-						'templates/coming-soon.html',
+						'templates/**/*',
                         'views/**/*'
                     ]
                 }
