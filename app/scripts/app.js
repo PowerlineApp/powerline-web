@@ -17,6 +17,10 @@ angular.module('app', [
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
+    .when('/home', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    })
     .when('/404', {
       templateUrl: 'views/404.html'
     })
