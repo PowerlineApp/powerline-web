@@ -1,8 +1,13 @@
 @import "variables.less";
-@import "../vendor/bootstrap/less/mixins.less";
+ @import "../vendor/bootstrap/less/mixins.less"; 
 
 // Reset
-@import "../vendor/bootstrap/less/normalize.less";
+
+/* Web App Styles */
+
+@import "web-app/main.less";
+@import "web-app/media-queries.less";
+@import "web-app/style.less";
 
 
 // Core CSS
@@ -11,11 +16,13 @@
 @import "mixins.less";
 @import "powerline.less";
 @import "responsive.less";
-@import "action2015.less";
-
+@import "header.less";
+@import "master-styles.less";
+@import "ionic.less";
 
 
 body.style-main {
+
   @import "style-main/variables.less";
   @import "style-main/grid.less";
 /*  @import "../vendor/bootstrap/less/scaffolding.less";*/
@@ -23,10 +30,15 @@ body.style-main {
   @import "style-main/nav.less";
   @import "style-main/header.less";
 /*  @import "style-main/buttons.less";
-*/  @import "style-main/main.less";
+*/@import "style-main/main.less";
   @import "style-main/posts.less";
   @import "style-main/about.less";
+
+
+
 }
+
+
 
 .app-page {
   @import "grid.less";
@@ -42,3 +54,7 @@ body.style-main {
 .landing-page{
   @import "landing-page.less";
 }
+
+
+
+

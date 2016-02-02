@@ -222,7 +222,7 @@ module.exports = function (grunt) {
 					'templates/**/*',
                     'images/**/*',
 					'img/**/*',
-                    'fonts/*',
+                    'fonts/**/*',
                     'config/*'
                   ]
             }

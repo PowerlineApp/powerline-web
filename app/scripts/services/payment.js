@@ -1,55 +1,63 @@
-angular.module('app')
-  .factory('cards', function ($http, serverUrl, JsCollection, balanced, $q) {
+angular.module('app.services')
+  .factory('cards', function ($http, serverConfig, JsCollection, JsModel, $q, stripe) {
     return {
       load: function () {
-        return $http.get(serverUrl + '/api/cards/').then(function (reponse) {
+        return $http.get(serverConfig.url + '/api/cards/').then(function (reponse) {
           return new JsCollection(reponse.data);
         });
       },
       create: function (data) {
-        return balanced.createCard(data).then(function (response) {
-          return $http.post(serverUrl + '/api/cards/', {
-            name: data.name,
-            balanced_uri: response.uri
-          }).catch(function () {
-            return $q.reject('Server Error');
-          });
-        });
-      }
-    };
-  })
-  .factory('balanced', function ($q, $window, $rootScope, marketplaceToken) {
-
-    var balanced;
-
-    $rootScope.is_balanced_loaded = false;
-    angular.element.getScript('https://js.balancedpayments.com/v1/balanced.js', function (){
-      balanced = $window.balanced;
-      balanced.init('/v1/marketplaces/' + marketplaceToken);
-      $rootScope.is_balanced_loaded = true;
-      $rootScope.execApply();
-    });
-
-    return {
-      createCard: function (data) {
         var deferred = $q.defer();
-        balanced.card.create(data, function (response) {
-          if(response.status === 201 && response.data.uri) {
-            deferred.resolve(response.data);
+
+        stripe().card.createToken({
+          name: data.name,
+          number: data.number,
+          cvc: data.cvc,
+          exp_month: data.expired_month,
+          exp_year: data.expired_year
+        }, function(status, response) {
+          if (response.error) {
+            deferred.reject(response.error.message);
           } else {
-            var error = '';
-            _.each(response.error, function (value) {
-              error += String(value) + ' \n';
-            });
-
-            deferred.reject(error);
+            $http.post(serverConfig.url + '/api/cards/', {source: response.id})
+              .then(function (response) {
+                deferred.resolve(new JsModel(response.data));
+              })
+              .catch(function () {
+                deferred.reject('Server Error');
+              })
+            ;
           }
-
-          $rootScope.execApply();
         });
 
         return deferred.promise;
+      },
+      remove: function (card) {
+        return $http['delete'](serverConfig.url + '/api/cards/' + card.get('id'));
       }
+    };
+  })
+  .factory('stripe', function($window, serverConfig) {
+    var src = 'https://js.stripe.com/v2/';
+    if (!$window.Stripe) {
+      load();
+    }
+
+    function load() {
+      var s = document.createElement('script');
+      s.src = src;
+      document.body.appendChild(s);
+      s.onload = function() {
+        $window.Stripe.setPublishableKey(serverConfig.stripePK);
+      };
+    }
+
+    return function() {
+      if (!$window.Stripe) {
+        load();
+      }
+
+      return $window.Stripe;
     };
   })
 ;
