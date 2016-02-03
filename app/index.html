@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="app" >
 <head>
 	<!-- <base href="/" > -->
     <meta charset="utf-8">
@@ -14,9 +14,12 @@
     <meta property="og:site_name" content="Powerline - Democracy for everyone." />
     <meta property="og:description" content="Powerline is the easiest way for leaders and constituents to interact with one another! Powerline seamlessly integrates polling, petitions, alerts, fundraising, events, discussions, and so much more into one simple, beautiful, and free mobile app. Don't fight the noise. Be heard. With Powerline! " />
 
-
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css" /> 
+		
         <!-- build:css({dist,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+
+		
         <!-- endbuild -->
     <link href="//fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
 	<link href='//fonts.googleapis.com/css?family=Montserrat:300,400,700' rel='stylesheet' type='text/css'>
@@ -25,11 +28,58 @@
 	<link href='//fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 	
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/angular/angular.min.js"></script>
+	<script src="vendor/angular-route/angular-route.min.js"></script>
+	<script src="vendor/angular-touch/angular-touch.min.js"></script>
+	<script src="vendor/angular-resource/angular-resource.min.js"></script>
+	<script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/underscore/underscore-min.js"></script>
+	<script src="vendor/ionic/js/ionic.min.js"></script>
+    <script src="vendor/iscroll/build/iscroll-lite.js"></script>
+    <script src="vendor/momentjs/min/moment.min.js"></script>
+	<script src="vendor/js-collection/angular-js-collection.js"></script>		
+	<script src="vendor/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="vendor/bluebird/js/browser/bluebird.js"></script>
+    <script src="vendor/Autolinker.js/dist/Autolinker.min.js"></script>
+    <script src="vendor/angular-bindonce/bindonce.min.js"></script>
+    <script src="vendor/textarea-caret-position/index.js"></script>
+	<script src="vendor/ng-facebook/ngFacebook.js"></script>
+	
+	<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+	<script src="vendor/showdown/compressed/showdown.js"></script>
+
+	<script src="vendor/jquery-ui/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/jquery-ui/themes/smoothness/jquery-ui.css" />
+	
+	<script type="text/javascript" src="vendor/ddslick/jquery.ddslick.js"></script>
+
+    <script type="text/javascript" src="vendor/tagcanvas/jquery.tagcanvas.js"></script>
+	<script src="vendor/bootbox/bootbox.js"></script>
+    <script src="vendor/ngBootbox/dist/ngBootbox.js"></script>
+
+	<script src="vendor/ngImgCrop/compile/minified/ng-img-crop.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/ngImgCrop/compile/minified/ng-img-crop.css">
+	<link rel="stylesheet" type="text/css" href="vendor/components-font-awesome/css/font-awesome.css" />
+	
+	<script src="vendor/zeroclipboard/dist/ZeroClipboard.js"></script>
+    <script src="vendor/angular-zeroclipboard/src/angular-zeroclipboard.js"></script>
+	
+	<!-- build:js scripts/modules.js -->
+	
+
+	
+	<script src="vendor/angular-markdown-directive/markdown.js"></script>
+	
+	
 </head>
   
 
-<body ng-app="app" ng-class="layout.bodyClass">
+<body class="ng-scope" ng-class="bodyClass">
 
+	<div id="container" ng-class="containerClass" >
     <!--[if lt IE 9]>
       <script src="vendor/es5-shim/es5-shim.min.js"></script>
       <script src="vendor/json3/lib/json3.min.js"></script>
@@ -46,35 +96,33 @@
     
 
 	<!-- Begin Site Container -->
-	<section id="wrap"  class="container" ng-view="">
+	<section id="wrap"  class="" >
+		
+		<header class="top-bar" id="header" ng-controller="topBar"  ng-include="'templates/top-bar.html'"></header>
 	
+		<section class="container container-fluid mainContainer">
+	        <div class="row">
+	            <div class="col-md-3 containerLeftSection" ng-controller="mainMenu"  ng-include="'templates/left-bar.html'" ></div>
+	            <div class="col-md-6 content" ng-view ></div>
+	            <div class="col-md-3 containerRightSection" ng-controller="rightBar" ng-include="'templates/right-bar.html'"></div>
+	        </div>
+	    </section>
 	
 	</section>
 	
 	<!-- End Site Container -->
     
 	<div id="fb-root"></div>
-    
-		<script src="vendor/jquery/jquery.min.js"></script>
-		
-    	<script src="vendor/underscore/underscore-min.js"></script>
-    	<script src="vendor/angular/angular.min.js"></script>
-    	<script src="vendor/showdown/compressed/showdown.js"></script>
-
-    	<!-- build:js scripts/modules.js -->
-    	<script src="vendor/angular-resource/angular-resource.min.js"></script>
-    	<script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
-    	<script src="vendor/angular-route/angular-route.min.js"></script>
-    	<script src="vendor/angular-markdown-directive/markdown.js"></script>
-    	<script src="vendor/js-collection/angular-js-collection.js"></script>
-    
-		<!-- endbuild -->
-    	
+        
 		<script src="config/config.js"></script>
-    
+
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
-    	
+
 		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers.js"></script> 
+		<script src="scripts/directives.js"></script>
+		<script src="scripts/filters.js"></script> 
+
     	<script src="scripts/controllers/main.js"></script>
     	<script src="scripts/controllers/petitions.js"></script>
     	<script src="scripts/controllers/payment-requests.js"></script>
@@ -87,11 +135,41 @@
 		<script src="scripts/controllers/user-group.js"></script>
 		<script src="scripts/controllers/user-follow.js"></script>
 		<script src="scripts/controllers/user-representatives.js"></script>
+		<script src="scripts/controllers/representatives.js"></script>
 		<script src="scripts/controllers/anchor-scroll.js"></script>
+		<script src="scripts/controllers/settings.js"></script>
+		<script src="scripts/controllers/services.js"></script>
+		<script src="scripts/controllers/home.js"></script>
+		<script src="scripts/controllers/influence.js"></script>
+		<script src="scripts/controllers/widget.js"></script>
+
+
+		<script src="scripts/controllers/top-bar.js"></script>
+		<script src="scripts/controllers/profile.js"></script>
+		<script src="scripts/controllers/body-style.js"></script>
+
+
+
+		<script src="scripts/controllers/session/login.js"></script> 
+		<script src="scripts/controllers/session/registration.js"></script>
+		<script src="scripts/controllers/session/registration-step2.js"></script>
+	    <script src="scripts/controllers/session/registration-step3.js"></script>
+		<script src="scripts/controllers/discussion.js"></script>
+		<script src="scripts/controllers/question.js"></script>
+		<script src="scripts/controllers/groups.js"></script>
+		<script src="scripts/controllers/discussion.js"></script>
+	    <script src="scripts/controllers/messages.js"></script>
+	    <script src="scripts/controllers/search.js"></script>
+		<script src="scripts/controllers/payment-request.js"></script>
+	    <script src="scripts/controllers/leader-event.js"></script>
+	    <script src="scripts/controllers/guide.js"></script>
+
+
+		<script src="scripts/services.js"></script> 
     	<script src="scripts/services/petitions.js"></script>
     	<script src="scripts/services/payment.js"></script>
     	<script src="scripts/services/payment-requests.js"></script>
-	    <script src="scripts/services/session.js"></script>
+	   	<script src="scripts/services/session.js"></script> 
 	    <script src="scripts/services/resetpassword.js"></script>
 	    <script src="scripts/services/educational-context.js"></script>
 	    <script src="scripts/services/users.js"></script>
@@ -101,14 +179,43 @@
 		<script src="scripts/services/custom-posts.js"></script>
 		<script src="scripts/services/random-names.js"></script>
 	    <script src="scripts/services/flurry.js"></script>
-		<script src="scripts/services/user-login.js"></script>
+		<script src="scripts/services/influence.js"></script>
+		<script src="scripts/services/questions.js"></script>
+		<script src="scripts/services/discussion.js"></script>
+
+
+		<!--<script src="scripts/services/user-login.js"></script>-->
 		<script src="scripts/services/name-factory.js"></script>
-		<script src="scripts/services/angular-social-links.js"></script>
+
 		<script src="scripts/services/userprofile.js"></script>
-	    <script src="scripts/directives/tree.js"></script>
+
+		<script src="scripts/services/groups.js"></script>
+		<script src="scripts/services/announcements.js"></script>
+		<script src="scripts/services/i-storage.js"></script>
+		<script src="scripts/services/invites.js"></script>
+		<script src="scripts/services/follows.js"></script>
+		<script src="scripts/services/social-activity.js"></script>
+		<script src="scripts/services/notifications.js"></script>
+		<script src="scripts/services/activity.js"></script>
+		<script src="scripts/services/representatives.js"></script>
+
+		<!-- Directives -->
+	    <script src="scripts/directives/common-animations.js"></script>
 	    <script src="scripts/directives/forms.js"></script>
+	    <script src="scripts/directives/pull-down.js"></script>
+	    <script src="scripts/directives/link.js"></script>
+	    <script src="scripts/directives/groups.js"></script>
+	    <script src="scripts/directives/tree.js"></script>
+	    <script src="scripts/directives/pie.js"></script>
+	    <script src="scripts/directives/discussions.js"></script>
 	    <script src="scripts/directives/cards.js"></script>
-	    <script src="scripts/filters/date.js"></script>
+	    <script src="scripts/directives/ionic.js"></script>
+	    <script src="scripts/directives/media.js"></script>
+	    <script src="scripts/directives/guide.js"></script>
+	    <script src="scripts/directives/autocomplete.js"></script>
+	    <script src="scripts/directives/ddSelect.js"></script>
+	    <script src="scripts/directives/slideable.js"></script>
+	    <script src="scripts/directives/ngenter.js"></script>
     	<!-- endbuild -->
 
 
